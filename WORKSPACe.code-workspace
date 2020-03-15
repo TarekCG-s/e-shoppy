@@ -1,0 +1,15 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"python.pythonPath": "/mnt/e/Work/Web_Training/e-shoppy/env/bin/python",
+		"python.linting.lintOnSave": true,
+		"python.linting.pylintEnabled": true,
+		"python.linting.pylintArgs": [
+			"--load-plugins=pylint_django"
+		],
+	}
+}
