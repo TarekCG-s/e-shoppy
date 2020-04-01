@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     "shop",
     "cart",
     "orders",
+    "payment",
+    "coupons",
 ]
 
 MIDDLEWARE = [
@@ -113,6 +115,7 @@ USE_TZ = True
 
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
@@ -124,4 +127,11 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media/")
 
 CART_SESSION_ID = "cart"
 
-# CELERY_BROKER_URL = "amqp://admin:admin@localhost:5672/myvhost"
+from braintree import Configuration, Environment
+
+Configuration.configure(
+    Environment.Sandbox,
+    "2ds4s376x79cgszr",
+    "zsfg6yhgcw6rjrsp",
+    "5eba8a1a893fe96291a36bd1ff1dac1d",
+)
